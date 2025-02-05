@@ -15,11 +15,38 @@ header {
 }
 
 .profile-photo {
-  width: 200px; /* Adjust the circular container size */
-  height: 200px;
-  border-radius: 50%; /* Makes the container circular */
-  object-fit: cover; /* Ensures the image maintains proportions and fills the circle */
-  overflow: hidden; /* Prevents any overflow outside the circle */
+  width: 200px; /* Initial width */
+  height: 200px; /* Initial height */
+  border-radius: 50%; /* Keeps the circular shape */
+  object-fit: cover; /* Ensures the image fits the circle */
+  overflow: hidden; /* Prevents overflow outside the circle */
+  position: relative;
+  display: block;
+}
+
+@media (max-width: 768px) {
+  .header-content {
+    flex-direction: column; /* Stack the header content on smaller screens */
+    align-items: center;
+    text-align: center;
+  }
+
+  .profile-photo {
+    width: 150px; /* Reduce profile photo size on smaller screens */
+    height: 150px;
+  }
+
+  .info {
+    align-items: center;
+  }
+
+  h1 {
+    font-size: 2rem;
+  }
+
+  .contact-links {
+    font-size: 1rem;
+  }
 }
 
 
@@ -83,6 +110,7 @@ header {
   padding: 1rem 0;
   text-align: center;
 }
+
 nav {
   background: white;
   color: #333;
@@ -96,9 +124,23 @@ nav a {
   text-decoration: none;
   margin: 0 1rem;
 }
+
 nav a:hover {
   text-decoration: underline;
 }
+
+@media (max-width: 768px) {
+  nav {
+    padding: 0.5rem;
+  }
+
+  nav a {
+    display: block; /* Stack navigation items vertically */
+    margin: 0.5rem 0;
+  }
+}
+
+
 .container {
   max-width: 800px;
   margin: 2rem auto;
