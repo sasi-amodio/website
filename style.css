@@ -1,0 +1,136 @@
+/* Main layout of the header */
+header {
+  display: flex;
+  justify-content: center; /* Center horizontally */
+  align-items: center; /* Center vertically */
+  /* height: 30vh; /* Make the header take the full viewport height */
+}
+
+.header-content {
+  display: flex; /* Creates a row layout */
+  align-items: center; /* Vertically aligns content */
+  gap: 20px; /* Adds space between the image and the text */
+  text-align: left; /* Ensures text is aligned to the left */
+  padding: 20px; /* Optional: adds padding around the content */
+}
+
+.profile-photo {
+  width: 200px; /* Adjust the circular container size */
+  height: 200px;
+  border-radius: 50%; /* Makes the container circular */
+  object-fit: cover; /* Ensures the image maintains proportions and fills the circle */
+  overflow: hidden; /* Prevents any overflow outside the circle */
+}
+
+
+/* Name and contact container */
+.info {
+  display: flex;
+  flex-direction: column; /* Stacks name and contact links vertically */
+  justify-content: center; /* Ensures contact links are centered vertically relative to the name */
+}
+
+/* Name styles */
+h1 {
+  font-size: 2.5rem;
+  margin-bottom: 10px; /* Adds space between the name and the contact links */
+}
+
+/* Contact links styles */
+.contact-links {
+  font-size: 1.2rem;
+}
+
+.contact-links a {
+  margin: 0 10px; /* Adds space between icons */
+  text-decoration: none;
+  color: #333; /* Adjust text/icon color */
+}
+
+.contact-links i {
+  font-size: 1.5rem; /* Adjust icon size */
+}
+
+
+
+#contact p {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 18px;
+}
+
+#contact a {
+  margin: 0 10px;
+  text-decoration: none;
+  color: inherit;
+}
+
+#contact i {
+  font-size: 20px;
+}
+
+
+body {
+  font-family: Arial, sans-serif;
+  line-height: 1.6;
+  margin: 0;
+  padding: 0;
+}
+header {
+  background: white;
+  color: #333;
+  padding: 1rem 0;
+  text-align: center;
+}
+nav {
+  background: white;
+  color: #333;
+  padding: 0.5rem;
+  text-align: center;
+  font-weight: bold;
+}
+
+nav a {
+  color: #333;
+  text-decoration: none;
+  margin: 0 1rem;
+}
+nav a:hover {
+  text-decoration: underline;
+}
+.container {
+  max-width: 800px;
+  margin: 2rem auto;
+  padding: 0 1rem;
+}
+section {
+  margin-bottom: 5rem;
+}
+
+
+footer {
+  background: white;
+  color: #333;
+  text-align: center;
+  padding: 1rem 0;
+  margin-top: 2rem;
+}
+
+.separator {
+  height: 2px;
+  background-color: #ccc;
+  border: none;
+  margin: 20px auto;
+  width: 80%; /* Adjust the width as needed */
+}
+
+.separator2 {
+  height: 2px;
+  background-color: #ccc;
+  border: none;
+  margin: 20px auto;
+  width: 100%; /* Adjust the width as needed */
+}
+
+
