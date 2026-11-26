@@ -121,6 +121,15 @@ section > .wrap { padding-block: 3.5rem; display: grid; gap: 2rem; }
 .steps li::before { content: counter(step); font-family: var(--font-display); font-weight: 700; font-size: 1.1rem; color: var(--accent); }
 .steps p { color: var(--muted); }
 
+/* The three living-room mockups */
+.story { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 1.75rem; counter-reset: scene; }
+.story li { counter-increment: scene; display: grid; gap: 0.6rem; align-content: start; min-width: 0; }
+.story .scene { width: 100%; height: auto; display: block; border-radius: 12px; border: 1px solid var(--line); }
+.story h3::before { content: counter(scene) ". "; color: var(--accent); }
+.story p { color: var(--muted); }
+body svg [lang="en"] { display: none; }
+:root[data-lang="en"] body svg [lang="en"] { display: inline; }
+
 /* Feature rows with a phone or TV picture */
 .feature { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 3rem; align-items: center; }
 .feature.flip .feature-media { order: -1; }
@@ -170,7 +179,7 @@ footer .wrap { padding-block: 1.75rem; display: flex; justify-content: space-bet
 @media (max-width: 860px) {
   .hero .wrap, .feature { grid-template-columns: minmax(0, 1fr); gap: 2rem; }
   .feature.flip .feature-media { order: 0; }
-  .steps, .next { grid-template-columns: minmax(0, 1fr); }
+  .steps, .next, .story { grid-template-columns: minmax(0, 1fr); }
   .hero .wrap { padding-block: 2rem 3rem; }
   section > .wrap { padding-block: 2.75rem; }
 }
