@@ -57,9 +57,7 @@ var ECTV_EMAIL = "sasi.amodio98@gmail.com";
 
   function start() {
     var lang = saved();
-    if (lang !== "it" && lang !== "en") {
-      lang = (navigator.language || "it").toLowerCase().indexOf("it") === 0 ? "it" : "en";
-    }
+    if (lang !== "it" && lang !== "en") lang = "it";  // Italian unless the visitor chose English
     document.querySelectorAll(".lang button").forEach(function (b) {
       b.addEventListener("click", function () { setLang(b.dataset.set); remember(b.dataset.set); });
     });
