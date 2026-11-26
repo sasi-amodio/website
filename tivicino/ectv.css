@@ -204,6 +204,7 @@ footer .wrap { padding-block: 1.75rem; display: flex; justify-content: space-bet
 }
 .field textarea { min-height: 9rem; resize: vertical; }
 .hp { position: absolute; left: -9999px; width: 1px; height: 1px; opacity: 0; }
+.note { font-size: var(--step--1); color: var(--muted); }
 .form-status { min-height: 1.6em; font-weight: 700; }
 .form-status.ok { color: var(--accent); }
 .form-status.error { color: var(--signal); }
