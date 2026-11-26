@@ -10,6 +10,8 @@
   --accent-ink: #ffffff;
   --accent-soft: #dcefe2;
   --signal: #c2453b;      /* the red "camera on" dot */
+  --highlight: #e9a826;
+  --highlight-soft: rgba(233, 168, 38, 0.28);
   --bezel: #1b1f1d;
   --screen: #17221d;
 
@@ -146,6 +148,26 @@ body svg [lang="en"] { display: none; }
 .points li::before { content: ""; width: 0.6rem; height: 0.6rem; border-radius: 50%; background: var(--accent); margin-top: 0.6rem; }
 .points.red li::before { background: var(--signal); }
 
+/* How it works: steps beside the family app */
+.how { display: grid; grid-template-columns: minmax(0, 1.3fr) minmax(0, 0.7fr); gap: 3rem; align-items: center; }
+.steps.vertical { grid-template-columns: minmax(0, 1fr); }
+#funzionalita > .wrap { gap: 3.5rem; }
+
+/* Look at the room: highlighted button and the camera view */
+.phone svg.screen-mock { width: 100%; height: auto; display: block; border-radius: 22px; }
+.pair { align-items: center; gap: 1rem; flex-wrap: nowrap; }
+.phone-fig { margin: 0; display: grid; gap: 0.6rem; justify-items: center; min-width: 0; flex: 1 1 0; max-width: 15rem; }
+.phone-fig .phone { width: 100%; }
+.phone-fig figcaption { font-size: var(--step--1); color: var(--muted); text-align: center; }
+.shot { position: relative; }
+.ring {
+  /* the button sits at x 148-352, y 717-771 of the 500 x 1000 screenshot; 9px is the phone frame */
+  position: absolute; left: calc(9px + (100% - 18px) * 0.27); top: calc(9px + (100% - 18px) * 0.709);
+  width: calc((100% - 18px) * 0.46); height: calc((100% - 18px) * 0.07);
+  border: 4px solid var(--highlight); border-radius: 16px; box-shadow: 0 0 0 6px var(--highlight-soft);
+}
+.arrow { font-size: 2rem; color: var(--accent); flex: none; }
+
 /* Next */
 .next { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 1.25rem; }
 .next div { background: var(--surface); border: 1px solid var(--line); border-radius: 12px; padding: 1.25rem; display: grid; gap: 0.4rem; align-content: start; }
@@ -180,15 +202,18 @@ footer .wrap { padding-block: 1.75rem; display: flex; justify-content: space-bet
 @media (max-width: 860px) {
   .hero .wrap, .feature { grid-template-columns: minmax(0, 1fr); gap: 2rem; }
   .feature.flip .feature-media { order: 0; }
-  .steps, .next, .story { grid-template-columns: minmax(0, 1fr); }
+  .steps, .next, .story, .how { grid-template-columns: minmax(0, 1fr); }
   .hero .wrap { padding-block: 2rem 3rem; }
   section > .wrap { padding-block: 2.75rem; }
 }
 @media (max-width: 480px) {
   .phone { width: min(12.5rem, 100%); }
   .feature-media .phone + .phone { display: none; }
+  .arrow { font-size: 1.4rem; }
 }
 @media (prefers-reduced-motion: no-preference) {
   .tv-led { animation: blink 1.6s ease-in-out infinite; }
+  .ring { animation: ring 1.8s ease-in-out infinite; }
+  @keyframes ring { 50% { box-shadow: 0 0 0 12px var(--highlight-soft); } }
   @keyframes blink { 50% { opacity: 0.25; } }
 }
