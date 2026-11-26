@@ -59,7 +59,7 @@ var ECTV_WEB3FORMS_KEY = "964a38c7-bfce-4792-b695-560e3f77e31a";
       if (!msg) return;
       if (!ECTV_WEB3FORMS_KEY) {
         window.location.href = "mailto:" + ECTV_EMAIL +
-          "?subject=" + encodeURIComponent("Elder Care TV - suggerimento") +
+          "?subject=" + encodeURIComponent("TiVicino - suggerimento") +
           "&body=" + encodeURIComponent(msg);
         return;
       }
@@ -70,8 +70,8 @@ var ECTV_WEB3FORMS_KEY = "964a38c7-bfce-4792-b695-560e3f77e31a";
         headers: { "Content-Type": "application/json", "Accept": "application/json" },
         body: JSON.stringify({
           access_key: ECTV_WEB3FORMS_KEY,
-          subject: "Elder Care TV - nuovo suggerimento",
-          from_name: "Elder Care TV",
+          subject: "TiVicino - nuovo suggerimento",
+          from_name: "TiVicino",
           email: email,
           replyto: email,
           message: msg,
