@@ -104,8 +104,8 @@ p { margin: 0; }
 
 /* The drawn TV */
 .tv { min-width: 0; }
-.tv-set { background: var(--bezel); border-radius: 14px; padding: 12px 12px 18px; box-shadow: 0 30px 60px -30px rgba(10, 30, 20, 0.55); }
-.tv-set img { border-radius: 4px; width: 100%; aspect-ratio: 16 / 9; object-fit: cover; background: var(--screen); }
+.tv-set { background: var(--bezel); border-radius: 28px; padding: 14px 14px 20px; box-shadow: 0 30px 60px -30px rgba(10, 30, 20, 0.55); }
+.tv-set img { border-radius: 16px; width: 100%; aspect-ratio: 16 / 9; object-fit: cover; background: var(--screen); }
 .tv-led { width: 6px; height: 6px; border-radius: 50%; background: var(--accent); margin: 8px auto 0; opacity: 0.8; }
 .tv-stand { width: 34%; height: 14px; margin: 0 auto; background: var(--bezel); clip-path: polygon(12% 0, 88% 0, 100% 100%, 0 100%); }
 .tv-caption { margin-top: 0.9rem; font-size: var(--step--1); color: var(--muted); text-align: center; }
@@ -122,9 +122,10 @@ section > .wrap { padding-block: 3.5rem; display: grid; gap: 2rem; }
 .steps p { color: var(--muted); }
 
 /* The three living-room mockups */
-.story { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 1.75rem; counter-reset: scene; }
+.story { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 1.25rem; counter-reset: scene; }
+@media (min-width: 1300px) { .story { margin-inline: -5rem; } }
 .story li { counter-increment: scene; display: grid; gap: 0.6rem; align-content: start; min-width: 0; }
-.story .scene { width: 100%; height: auto; display: block; border-radius: 12px; border: 1px solid var(--line); }
+.story .scene { width: 100%; height: auto; display: block; border-radius: 22px; border: 1px solid var(--line); }
 .story h3::before { content: counter(scene) ". "; color: var(--accent); }
 .story p { color: var(--muted); }
 body svg [lang="en"] { display: none; }

@@ -11,7 +11,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:wght@400;700&family=Bricolage+Grotesque:opsz,wght@12..96,600;12..96,700&display=swap">
-<link rel="stylesheet" href="ectv.css">
+<link rel="stylesheet" href="ectv.css?v=4">
 </head>
 <body>
 
@@ -66,6 +66,7 @@
       <svg aria-hidden="true" width="0" height="0" style="position:absolute">
   <defs>
     <linearGradient id="sky" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#7fb8df"/><stop offset="1" stop-color="#e3f2fa"/></linearGradient>
+    <clipPath id="screen-clip"><rect x="230" y="78" width="340" height="191" rx="10"/></clipPath>
     <symbol id="room-back" viewBox="0 0 800 500">
       <rect width="800" height="390" fill="#dfe6dd"/>
       <rect y="390" width="800" height="110" fill="#c79f7b"/>
@@ -85,7 +86,7 @@
       <rect x="536" y="370" width="8" height="20" fill="#5e4635"/>
       <rect x="386" y="276" width="28" height="24" fill="#1b1f1d"/>
       <rect x="360" y="296" width="80" height="5" rx="2" fill="#1b1f1d"/>
-      <rect x="222" y="70" width="356" height="207" rx="6" fill="#1b1f1d"/>
+      <rect x="222" y="70" width="356" height="207" rx="18" fill="#1b1f1d"/>
       <rect x="386" y="57" width="28" height="14" rx="4" fill="#2a2f2c"/>
       <circle cx="400" cy="64" r="4.5" fill="#4d6b8a"/>
       <rect x="490" y="283" width="38" height="17" rx="3" fill="#f4f6f3" stroke="#c9d1ca"/>
@@ -110,7 +111,7 @@
         <li>
           <svg class="scene" viewBox="110 0 640 500" aria-hidden="true">
             <use href="#room-back" width="800" height="500"/>
-            <svg x="230" y="78" width="340" height="191" viewBox="0 0 1280 720" preserveAspectRatio="xMidYMid slice"><rect width="1280" height="720" fill="url(#sky)"/>
+            <g clip-path="url(#screen-clip)"><svg x="230" y="78" width="340" height="191" viewBox="0 0 1280 720" preserveAspectRatio="xMidYMid slice"><rect width="1280" height="720" fill="url(#sky)"/>
               <circle cx="980" cy="190" r="70" fill="#ffe9a8"/>
               <path d="M0 470 L230 250 L400 420 L620 180 L900 470 Z" fill="#7d9bb0"/>
               <path d="M560 236 L620 180 L672 230 L640 222 L612 240 L590 226 Z" fill="#f4f7fa"/>
@@ -119,7 +120,7 @@
               <rect x="60" y="590" width="600" height="84" rx="8" fill="rgba(0,0,0,.55)"/>
               <text x="92" y="644" font-size="38" fill="#fff" font-family="system-ui, -apple-system, Segoe UI, sans-serif">Documentario · Le Dolomiti</text>
               <rect x="1110" y="44" width="120" height="56" rx="10" fill="none" stroke="rgba(255,255,255,.85)" stroke-width="5"/>
-              <text x="1170" y="84" font-size="32" font-weight="700" fill="rgba(255,255,255,.9)" text-anchor="middle" font-family="system-ui, -apple-system, Segoe UI, sans-serif">HD</text></svg>
+              <text x="1170" y="84" font-size="32" font-weight="700" fill="rgba(255,255,255,.9)" text-anchor="middle" font-family="system-ui, -apple-system, Segoe UI, sans-serif">HD</text></svg></g>
             <use href="#room-front" width="800" height="500"/>
           </svg>
           <h3><span lang="it">Guarda la TV come sempre</span><span lang="en">Watching TV as usual</span></h3>
@@ -128,7 +129,7 @@
         <li>
           <svg class="scene" viewBox="110 0 640 500" aria-hidden="true">
             <use href="#room-back" width="800" height="500"/>
-            <svg x="230" y="78" width="340" height="191" viewBox="0 0 1280 720" preserveAspectRatio="xMidYMid slice"><image href="img/tv-ring.png?v=3" width="1280" height="720"/></svg>
+            <g clip-path="url(#screen-clip)"><svg x="230" y="78" width="340" height="191" viewBox="0 0 1280 720" preserveAspectRatio="xMidYMid slice"><image href="img/tv-ring.png?v=3" width="1280" height="720"/></svg></g>
             <use href="#room-front" width="800" height="500"/>
             <path d="M208 140 q-16 24 0 48 M192 128 q-26 36 0 72" stroke="#23784a" stroke-width="5" fill="none" stroke-linecap="round"/>
             <g><path d="M530 102 L516 128 L568 102Z" fill="#fff" stroke="#142019" stroke-width="2.5" stroke-linejoin="round"/>
@@ -142,7 +143,7 @@
         <li>
           <svg class="scene" viewBox="110 0 640 500" aria-hidden="true">
             <use href="#room-back" width="800" height="500"/>
-            <svg x="230" y="78" width="340" height="191" viewBox="0 0 1280 720" preserveAspectRatio="xMidYMid slice"><rect width="1280" height="720" fill="#f5d6b9"/>
+            <g clip-path="url(#screen-clip)"><svg x="230" y="78" width="340" height="191" viewBox="0 0 1280 720" preserveAspectRatio="xMidYMid slice"><rect width="1280" height="720" fill="#f5d6b9"/>
               <image href="img/avatar-marco.jpg?v=3" x="280" y="0" width="720" height="720"/>
               <rect x="1056" y="547" width="202" height="151" rx="11" fill="#3b4a44" stroke="rgba(255,255,255,.75)" stroke-width="4"/>
               <path d="M1092 696 q65 -62 130 0z" fill="#a8707e"/>
@@ -156,7 +157,7 @@
               <circle cx="54" cy="49" r="12" fill="#e5484d"/>
               <text x="78" y="59" font-size="28" fill="#fff" font-family="system-ui, -apple-system, Segoe UI, sans-serif">Videochiamata in corso</text>
               <rect x="1112" y="22" width="146" height="54" rx="27" fill="rgba(0,0,0,.6)"/>
-              <text x="1185" y="59" font-size="28" fill="#fff" text-anchor="middle" font-family="system-ui, -apple-system, Segoe UI, sans-serif">Marco</text></svg>
+              <text x="1185" y="59" font-size="28" fill="#fff" text-anchor="middle" font-family="system-ui, -apple-system, Segoe UI, sans-serif">Marco</text></svg></g>
             <use href="#room-front" width="800" height="500"/>
             <g><path d="M566 64 L546 90 L600 64Z" fill="#fff" stroke="#142019" stroke-width="2.5" stroke-linejoin="round"/>
             <rect x="548" y="10" width="196" height="58" rx="16" fill="#fff" stroke="#142019" stroke-width="2.5"/>
@@ -289,6 +290,6 @@
   </div>
 </footer>
 
-<script src="ectv.js"></script>
+<script src="ectv.js?v=4"></script>
 </body>
 </html>
