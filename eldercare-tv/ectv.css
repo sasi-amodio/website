@@ -169,6 +169,18 @@ body svg [lang="en"] { display: none; }
 }
 .arrow { font-size: 2rem; color: var(--accent); flex: none; }
 
+/* Privacy: one soft panel, three short points */
+.privacy {
+  list-style: none; margin: 0; padding: 0;
+  display: grid; grid-template-columns: repeat(3, minmax(0, 1fr));
+  background: var(--surface); border: 1px solid var(--line); border-radius: 24px; overflow: hidden;
+}
+.privacy li { padding: 1.75rem 1.75rem 2rem; display: grid; gap: 0.5rem; align-content: start; min-width: 0; }
+.privacy li + li { border-left: 1px solid var(--line); }
+.privacy h3 { display: flex; align-items: center; gap: 0.6rem; }
+.privacy h3::before { content: ""; width: 0.6rem; height: 0.6rem; border-radius: 50%; background: var(--signal); flex: none; }
+.privacy p { color: var(--muted); }
+
 /* Next */
 .next { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 1.25rem; }
 .next div { background: var(--surface); border: 1px solid var(--line); border-radius: 12px; padding: 1.25rem; display: grid; gap: 0.4rem; align-content: start; }
@@ -203,7 +215,8 @@ footer .wrap { padding-block: 1.75rem; display: flex; justify-content: space-bet
 @media (max-width: 860px) {
   .hero .wrap, .feature { grid-template-columns: minmax(0, 1fr); gap: 2rem; }
   .feature.flip .feature-media { order: 0; }
-  .steps, .next, .story, .how { grid-template-columns: minmax(0, 1fr); }
+  .steps, .next, .story, .how, .privacy { grid-template-columns: minmax(0, 1fr); }
+  .privacy li + li { border-left: 0; border-top: 1px solid var(--line); }
   .hero .wrap { padding-block: 2rem 3rem; }
   section > .wrap { padding-block: 2.75rem; }
 }
