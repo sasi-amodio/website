@@ -3,6 +3,9 @@
 // Google Forms links, one per language. Paste the "Send > link" URL of each form here.
 var ECTV_FORMS = { it: "", en: "" };
 var ECTV_EMAIL = "sasi.amodio98@gmail.com";
+// Web3Forms access key: suggestions are sent to the inbox tied to it. Public by design.
+// Empty: the form falls back to opening the visitor's email app.
+var ECTV_WEB3FORMS_KEY = "";
 
 (function () {
   var KEY = "ectv-lang";
@@ -43,15 +46,44 @@ var ECTV_EMAIL = "sasi.amodio98@gmail.com";
   function initContact() {
     var form = document.getElementById("contact");
     if (!form) return;
+    var status = document.getElementById("c-status");
+    var button = document.getElementById("c-send");
+    function say(it, en, ok) {
+      status.textContent = root.getAttribute("data-lang") === "en" ? en : it;
+      status.className = "form-status " + (ok ? "ok" : "error");
+    }
     form.addEventListener("submit", function (ev) {
       ev.preventDefault();
-      var en = root.getAttribute("data-lang") === "en";
-      var name = document.getElementById("c-name").value.trim();
+      var email = document.getElementById("c-email").value.trim();
       var msg = document.getElementById("c-msg").value.trim();
-      var subject = "Elder Care TV" + (name ? (en ? " - from " : " - da ") + name : "");
-      window.location.href = "mailto:" + ECTV_EMAIL +
-        "?subject=" + encodeURIComponent(subject) +
-        "&body=" + encodeURIComponent(msg);
+      if (!msg) return;
+      if (!ECTV_WEB3FORMS_KEY) {
+        window.location.href = "mailto:" + ECTV_EMAIL +
+          "?subject=" + encodeURIComponent("Elder Care TV - suggerimento") +
+          "&body=" + encodeURIComponent(msg);
+        return;
+      }
+      button.disabled = true;
+      say("Invio in corso…", "Sending…", true);
+      fetch("https://api.web3forms.com/submit", {
+        method: "POST",
+        headers: { "Content-Type": "application/json", "Accept": "application/json" },
+        body: JSON.stringify({
+          access_key: ECTV_WEB3FORMS_KEY,
+          subject: "Elder Care TV - nuovo suggerimento",
+          from_name: "Elder Care TV",
+          email: email,
+          replyto: email,
+          message: msg,
+          botcheck: document.getElementById("c-bot").checked
+        })
+      }).then(function (r) { return r.json(); }).then(function (data) {
+        if (!data.success) throw new Error(data.message || "failed");
+        form.reset();
+        say("Grazie! Il tuo suggerimento è arrivato.", "Thank you! Your suggestion has been sent.", true);
+      }).catch(function () {
+        say("Il suggerimento non è partito. Controlla la connessione e riprova.", "Your suggestion was not sent. Check your connection and try again.", false);
+      }).then(function () { button.disabled = false; });
     });
   }
 
@@ -61,7 +93,6 @@ var ECTV_EMAIL = "sasi.amodio98@gmail.com";
     document.querySelectorAll(".lang button").forEach(function (b) {
       b.addEventListener("click", function () { setLang(b.dataset.set); remember(b.dataset.set); });
     });
-    document.querySelectorAll("[data-email]").forEach(function (el) { el.textContent = ECTV_EMAIL; });
     initContact();
     setLang(lang);
   }

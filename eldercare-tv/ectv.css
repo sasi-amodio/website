@@ -203,7 +203,10 @@ footer .wrap { padding-block: 1.75rem; display: flex; justify-content: space-bet
   border: 1px solid var(--line); border-radius: 10px; padding: 0.75rem 0.9rem; width: 100%;
 }
 .field textarea { min-height: 9rem; resize: vertical; }
-.note { font-size: var(--step--1); color: var(--muted); }
+.hp { position: absolute; left: -9999px; width: 1px; height: 1px; opacity: 0; }
+.form-status { min-height: 1.6em; font-weight: 700; }
+.form-status.ok { color: var(--accent); }
+.form-status.error { color: var(--signal); }
 
 @media (max-width: 860px) {
   .hero .wrap, .feature { grid-template-columns: minmax(0, 1fr); gap: 2rem; }

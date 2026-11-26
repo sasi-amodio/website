@@ -9,7 +9,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:wght@400;700&family=Bricolage+Grotesque:opsz,wght@12..96,600;12..96,700&display=swap">
-<link rel="stylesheet" href="../ectv.css?v=11">
+<link rel="stylesheet" href="../ectv.css?v=12">
 </head>
 <body>
 
@@ -57,22 +57,24 @@
       <div class="section-head">
         <h2><span lang="it">Cosa miglioreresti?</span><span lang="en">What would you improve?</span></h2>
         <p>
-          <span lang="it">Una funzione che manca, qualcosa da rendere più semplice, un'idea che a te sembrerebbe ovvia? Scrivimela: ogni suggerimento viene letto e può finire nella prossima versione. Il pulsante apre la tua app di posta con il messaggio già pronto.</span>
-          <span lang="en">A missing feature, something to make simpler, an idea that seems obvious to you? Tell me: every suggestion gets read and may end up in the next version. The button opens your email app with the message ready.</span>
+          <span lang="it">Una funzione che manca, qualcosa da rendere più semplice, un'idea che a te sembrerebbe ovvia? Scrivimela: ogni suggerimento viene letto e può finire nella prossima versione.</span>
+          <span lang="en">A missing feature, something to make simpler, an idea that seems obvious to you? Tell me: every suggestion gets read and may end up in the next version.</span>
         </p>
       </div>
       <form class="contact" id="contact">
         <div class="field">
-          <label for="c-name"><span lang="it">Il tuo nome</span><span lang="en">Your name</span></label>
-          <input id="c-name" name="name" autocomplete="name">
+          <label for="c-email"><span lang="it">La tua email</span><span lang="en">Your email</span></label>
+          <input id="c-email" name="email" type="email" autocomplete="email" required>
         </div>
+        <input type="checkbox" name="botcheck" id="c-bot" class="hp" tabindex="-1" autocomplete="off" aria-hidden="true">
         <div class="field">
           <label for="c-msg"><span lang="it">Il tuo suggerimento</span><span lang="en">Your suggestion</span></label>
           <textarea id="c-msg" name="message" required></textarea>
         </div>
         <div class="actions">
-          <button class="btn" type="submit"><span lang="it">Manda il suggerimento</span><span lang="en">Send your suggestion</span></button>
+          <button class="btn" type="submit" id="c-send"><span lang="it">Manda il suggerimento</span><span lang="en">Send your suggestion</span></button>
         </div>
+        <p class="form-status" id="c-status" role="status" aria-live="polite"></p>
       </form>
     </div>
   </section>
@@ -85,6 +87,6 @@
   </div>
 </footer>
 
-<script src="../ectv.js?v=5"></script>
+<script src="../ectv.js?v=6"></script>
 </body>
 </html>
