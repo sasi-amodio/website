@@ -41,6 +41,18 @@ var ECTV_WEB3FORMS_KEY = "964a38c7-bfce-4792-b695-560e3f77e31a";
     var link = document.getElementById("form-link");
     if (!url) { frame.hidden = true; empty.hidden = false; link.hidden = true; return; }
     var embed = url + (url.indexOf("?") < 0 ? "?" : "&") + "embedded=true";
+    if (!frame.dataset.watch) {
+      // Each "Avanti" in the form loads a new page in the frame: bring the top of the
+      // form back into view, as the end of the previous page may be above the screen.
+      frame.dataset.watch = "1";
+      var loads = 0;
+      frame.addEventListener("load", function () {
+        loads += 1;
+        if (loads > 1 && box.getBoundingClientRect().top < 0) {
+          box.scrollIntoView({ behavior: "smooth", block: "start" });
+        }
+      });
+    }
     if (frame.getAttribute("src") !== embed) frame.setAttribute("src", embed);
     frame.hidden = false; empty.hidden = true; link.hidden = false;
     link.querySelector("a").href = url;
