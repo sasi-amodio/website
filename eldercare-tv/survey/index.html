@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="it" data-lang="it">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Elder Care TV – Questionario</title>
+<meta name="ectv-title-it" content="Elder Care TV – Questionario">
+<meta name="ectv-title-en" content="Elder Care TV – Survey">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:wght@400;700&family=Bricolage+Grotesque:opsz,wght@12..96,600;12..96,700&display=swap">
+<link rel="stylesheet" href="../ectv.css">
+</head>
+<body>
+
+<header class="top">
+  <div class="wrap">
+    <a class="brand" href="../"><span class="brand-dot" aria-hidden="true"></span>Elder Care TV</a>
+    <div class="top-right">
+      <a href="../"><span lang="it">Il progetto</span><span lang="en">The project</span></a>
+      <div class="lang" role="group" aria-label="Lingua / Language">
+        <button type="button" data-set="it" aria-pressed="true">IT</button>
+        <button type="button" data-set="en" aria-pressed="false">EN</button>
+      </div>
+    </div>
+  </div>
+</header>
+
+<main>
+  <section style="border-top:0">
+    <div class="wrap">
+      <div class="section-head">
+        <p class="eyebrow"><span lang="it">Questionario · 5 minuti</span><span lang="en">Survey · 5 minutes</span></p>
+        <h1><span lang="it">Cosa ti servirebbe davvero?</span><span lang="en">What would really help you?</span></h1>
+        <p>
+          <span lang="it">Dai un voto alle funzioni già pronte e a quelle in programma, dimmi cosa ne pensi dell'idea e quanto spenderesti. Le risposte sono anonime, a meno che tu non voglia lasciare un contatto.</span>
+          <span lang="en">Rate the features that are ready and the planned ones, tell me what you think of the idea and how much you would spend. Answers are anonymous unless you choose to leave a contact.</span>
+        </p>
+      </div>
+
+      <div class="form-box" id="form-box">
+        <iframe id="form-frame" title="Questionario / Survey" loading="lazy" hidden></iframe>
+        <div class="form-empty" id="form-empty">
+          <h3><span lang="it">Il questionario arriva a breve</span><span lang="en">The survey is coming soon</span></h3>
+          <p><span lang="it">Nel frattempo puoi scrivermi qui sotto: ogni commento è utile.</span><span lang="en">In the meantime you can write to me below: every comment helps.</span></p>
+        </div>
+      </div>
+      <p class="form-link" id="form-link" hidden>
+        <span lang="it">Il modulo non si vede bene?</span><span lang="en">Form not showing properly?</span>
+        <a href="#" target="_blank" rel="noopener"><span lang="it">Aprilo in una nuova scheda</span><span lang="en">Open it in a new tab</span></a>
+      </p>
+    </div>
+  </section>
+
+  <section id="contatto">
+    <div class="wrap">
+      <div class="section-head">
+        <h2><span lang="it">Scrivimi</span><span lang="en">Write to me</span></h2>
+        <p>
+          <span lang="it">Domande, idee, una funzione che manca? Il pulsante apre la tua app di posta con il messaggio già scritto.</span>
+          <span lang="en">Questions, ideas, a missing feature? The button opens your email app with the message already filled in.</span>
+        </p>
+      </div>
+      <form class="contact" id="contact">
+        <div class="field">
+          <label for="c-name"><span lang="it">Il tuo nome</span><span lang="en">Your name</span></label>
+          <input id="c-name" name="name" autocomplete="name">
+        </div>
+        <div class="field">
+          <label for="c-msg"><span lang="it">Messaggio</span><span lang="en">Message</span></label>
+          <textarea id="c-msg" name="message" required></textarea>
+        </div>
+        <div class="actions">
+          <button class="btn" type="submit"><span lang="it">Scrivi l'email</span><span lang="en">Write the email</span></button>
+        </div>
+        <p class="note">
+          <span lang="it">Oppure scrivi direttamente a</span><span lang="en">Or write directly to</span>
+          <a href="mailto:sasi.amodio98@gmail.com" data-email>sasi.amodio98@gmail.com</a>
+        </p>
+      </form>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <span>Elder Care TV · <span lang="it">nome provvisorio</span><span lang="en">working name</span></span>
+    <a href="/">salvatoreamodio.com</a>
+  </div>
+</footer>
+
+<script src="../ectv.js"></script>
+</body>
+</html>
