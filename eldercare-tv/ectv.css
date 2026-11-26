@@ -171,7 +171,7 @@ body svg [lang="en"] { display: none; }
 
 /* Privacy: a short note */
 #privacy > .wrap { padding-block: 2.5rem; }
-.disclaimer { max-width: 46rem; color: var(--muted); font-size: var(--step--1); line-height: 1.65; }
+.disclaimer { color: var(--muted); }
 .disclaimer strong { color: var(--ink); }
 
 /* Next */
