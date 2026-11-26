@@ -120,7 +120,7 @@ section > .wrap { padding-block: 3.5rem; display: grid; gap: 2rem; }
 
 .steps { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 1.5rem; counter-reset: step; }
 .steps li { counter-increment: step; display: grid; gap: 0.5rem; align-content: start; padding-top: 1rem; border-top: 3px solid var(--accent); }
-.steps li::before { content: counter(step); font-family: var(--font-display); font-weight: 700; font-size: 1.1rem; color: var(--accent); }
+.steps h3::before { content: counter(step) ". "; color: var(--accent); }
 .steps p { color: var(--muted); }
 
 /* The three living-room mockups */
