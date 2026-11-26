@@ -5,7 +5,7 @@ var ECTV_FORMS = { it: "", en: "" };
 var ECTV_EMAIL = "sasi.amodio98@gmail.com";
 // Web3Forms access key: suggestions are sent to the inbox tied to it. Public by design.
 // Empty: the form falls back to opening the visitor's email app.
-var ECTV_WEB3FORMS_KEY = "";
+var ECTV_WEB3FORMS_KEY = "964a38c7-bfce-4792-b695-560e3f77e31a";
 
 (function () {
   var KEY = "ectv-lang";
