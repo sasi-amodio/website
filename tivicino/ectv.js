@@ -1,7 +1,10 @@
 // Language switch (Italian / English) and the survey page's form and contact box.
 
 // Google Forms links, one per language. Paste the "Send > link" URL of each form here.
-var ECTV_FORMS = { it: "", en: "" };
+var ECTV_FORMS = {
+  it: "https://docs.google.com/forms/d/e/1FAIpQLSdc4dOkztdr-EDlFHaw_7Reb-5thd0SjbBeuTO7iiCgk_f55Q/viewform",
+  en: "https://docs.google.com/forms/d/e/1FAIpQLSdJJjXeGVOLf2WAqPp0qzGuFdml32F41BZEZoR6GsbRLTTFZA/viewform"
+};
 var ECTV_EMAIL = "sasi.amodio98@gmail.com";
 // Web3Forms access key: suggestions are sent to the inbox tied to it. Public by design.
 // Empty: the form falls back to opening the visitor's email app.
